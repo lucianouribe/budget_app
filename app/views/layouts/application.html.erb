@@ -3,16 +3,17 @@
   <head>
     <title>BudgetApp</title>
     <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  <% if Rails.env.development? %>
-  <script src="http://localhost:3808/webpack-dev-server.js"></script>
-<% end %>
-</head>
+    <% if Rails.env.development? %>
+      <script src="http://localhost:3808/webpack-dev-server.js"></script>
+    <% end %>
+  </head>
 
   <body>
     <%= yield %>
-  <%= javascript_include_tag *webpack_asset_paths('application') %>
-</body>
+    <%= javascript_include_tag *webpack_asset_paths('application') %>
+  </body>
 </html>

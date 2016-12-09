@@ -33,7 +33,7 @@ class AddMyNumber extends React.Component {
           <input className='col m4' ref='name' placeholder='Add Item' />
           <input className='col m4' ref='price' placeholder='Value' />
           <div className='col m2 '>
-            <input type='checkbox' ref='check' />
+            <input type='checkbox' id='check' ref='check'/>
             <label htmlFor='check'>Income?</label>
           </div>
           <input className='btn' type='submit' />

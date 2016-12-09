@@ -1,7 +1,21 @@
 @import 'materialize';
 
 .header {
+  top: 0;
   background-color: #ccc;
   border-bottom: 1px solid #000;
   height: 80px;
+}
+
+form {
+  margin-top: 10px;
+}
+.btn {
+  background-color: #353535;
+}
+.btn:hover {
+  background-color: #ff0055;
+}
+body, h1, h3 {
+  font-weight: 100;
 }
