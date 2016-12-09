@@ -2,6 +2,7 @@ import React from 'react';
 import AddMyNumber from '../components/AddMyNumber';
 import Expense from '../components/Expense';
 import Income from '../components/Income';
+import Finance from '../components/Finance';
 
 class App extends React.Component {
   constructor(props) {

@@ -9,15 +9,19 @@ class AddMyNumber extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let item = this.refs.item;
+    let name = this.refs.name;
+    let price = this.refs.price;
+    let check = this.refs.check;
     $.ajax({
       url: '/api/items',
       type: 'POST',
-      data: { item: {name: item.value }}
+      data: { item: {name: name.value, price: price.value, check: check.value }}
     }).done( finance => {
       this.props.addNew(finance);
-      item.value = null;
-    }).fail (msg => {
+      name.value = null;
+      price.value = null;
+      check.value = null;
+    }).fail (msg =>{
       // DO something here
     })
   }
@@ -26,10 +30,10 @@ class AddMyNumber extends React.Component {
     return (
       <div className='row'>
         <form onSubmit={this.handleSubmit}>
-          <input className='col m4' ref='item' placeholder='Add Item' />
-          <input className='col m4' ref='item-price' placeholder='Value' />
+          <input className='col m4' ref='name' placeholder='Add Item' />
+          <input className='col m4' ref='price' placeholder='Value' />
           <div className='col m2 '>
-            <input type='checkbox' id='check' defaultChecked={false}/>
+            <input type='checkbox' ref='check' />
             <label htmlFor='check'>Income?</label>
           </div>
           <input className='btn' type='submit' />
